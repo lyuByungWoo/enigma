@@ -1,12 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Portfolio</title>
-</head>
-<body>
-  <p>Hello, World!</p>
-</body>
+<html>
+    <head>
+        <title>간단한 게임만들기</title>
+
+    </head>
+    <body>
+        <script src="../game/lib/three.min.js"></script>
+        <script src="../game/lib/fflate.min.js"></script> 
+        <script src="../game/lib/FBXLoader.js"></script>
+        <script src="../game/lib/OrbitControls.js"></script>
+        <script src="../game/lib/GamePad.js"></script>
+        <script src="game.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                const game = new Game();
+                window.game = game;
+            });
+        </script>
+        <select id="changeAction"
+        onchange="javascript:game.changeAction()">
+            <option seleted value="2">Idle</option> <!-- 본디 0번이지만 꼬여서 변경 -->
+            <option value="4">Walk</option>
+            <option value="0">Kick</option>
+            <!-- 뭘 근거로 번호가 정해지는지는 아직 모름. -->
+        </select>
+    </body>
 </html>
